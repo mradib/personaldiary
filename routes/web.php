@@ -17,3 +17,7 @@ Route::get('/', function () {
 Route::get('/user','regcontroller@index');
 
 Route::post('/user','regcontroller@register')->name('register');
+
+Route::get('/dashboard','mancontroller@index')->name('userlist');
+Route::get('/user/{id}/edit','mancontroller@edit')->name('edit');
+Route::post('/user/{id}/update','mancontroller@update')->name('update');
