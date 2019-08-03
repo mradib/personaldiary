@@ -24,4 +24,9 @@ class mancontroller extends Controller
         ]);
         return 'updated';
     }
+    public function delete($id)
+    {
+        User::find($id)->delete();
+        return redirect()->route('userlist')->with('deletesuccess','a user has been deleted');
+    }
 }
