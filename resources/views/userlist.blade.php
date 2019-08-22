@@ -3,6 +3,7 @@
 <h1>
 astese
 </h1>
+<a href="{{route('logout')}}">(){{App\User::find(Auth::id())->username}})logout</a>
 @if(session('deletesuccess'))
     <p style="color:red;">{{session('deletesuccess')}}</p>
 @endif

@@ -18,7 +18,15 @@ Route::get('/user','regcontroller@index');
 
 Route::post('/user','regcontroller@register')->name('register');
 
-Route::get('/dashboard','mancontroller@index')->name('userlist');
-Route::get('/user/{id}/edit','mancontroller@edit')->name('edit');
-Route::post('/user/{id}/update','mancontroller@update')->name('update');
-Route::get('/user/{id}/delete','mancontroller@delete')->name('delete');
+Route::group(['middleware'=> 'chkUser'],function(){
+    Route::get('/dashboard','mancontroller@index')->name('userlist');
+    Route::get('/user/{id}/edit','mancontroller@edit')->name('edit');
+    Route::post('/user/{id}/update','mancontroller@update')->name('update');
+    Route::get('/user/{id}/delete','mancontroller@delete')->name('delete');
+    Route::get('/posts','postcontroller@index')->name('post.userlist');
+    Route::get('/posts','postcontroller@post')->name('post');
+});
+
+Route::get('/login','UserLoginController@index')->name('login.userlist');
+Route::post('/login','UserLoginController@login')->name('login');
+Route::get('/logout','logincontroller@logout')->name('logout');
