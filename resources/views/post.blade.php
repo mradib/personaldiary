@@ -5,7 +5,9 @@
 <body>
 <form action="{{ route ('user.post') }}" method="POST">
     {{csrf_field()}}
+    Title
     <input type="text" name="name"><br>
+    Post
     <input type="text" name="post"><br>
     <input type="submit" name="submit" value="Make A Post">
 </form>
