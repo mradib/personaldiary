@@ -27,6 +27,6 @@ Route::group(['middleware'=> 'chkUser'],function(){
     Route::get('/posts','postcontroller@post')->name('post');
 });
 
-Route::get('/login','logincontroller@index')->name('login.userlist');
-Route::post('/login','logincontroller@login')->name('login');
-Route::get('/logout','logincontroller@logout')->name('logout');
+Route::get('/login','logincontoller@index')->name('login.userlist');
+Route::post('/login','logincontoller@login')->name('login');
+Route::get('/logout','logincontoller@logout')->name('logout');

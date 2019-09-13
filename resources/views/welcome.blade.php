@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Personal Diary
                 </div>
 
                 <div class="links">
